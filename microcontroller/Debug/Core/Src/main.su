@@ -1,0 +1,9 @@
+../Core/Src/main.c:66:6:vChilPeri	16	static
+../Core/Src/main.c:77:6:vConv	16	static
+../Core/Src/main.c:99:5:main	56	static
+../Core/Src/main.c:180:6:SystemClock_Config	88	static
+../Core/Src/main.c:227:13:MX_I2C1_Init	8	static
+../Core/Src/main.c:261:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:332:6:StartDefaultTask	16	static
+../Core/Src/main.c:351:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:368:6:Error_Handler	4	static,ignoring_inline_asm
