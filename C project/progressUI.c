@@ -7,11 +7,11 @@
  int id=1, progress;
  
 void print(void);
-
+void clear_screen(void);
 int main()
 {
     srand(time(NULL));
-    int step=rand() % 3 ;
+    int step=rand() % 3 +1;
    for (int i = 0; i < length; i++)
    {
         if (progress>100)
@@ -25,8 +25,10 @@ int main()
         }
         print();
         sleep(1);
+        clear_screen();
+        
    }
-   
+    printf("Process Completed\n");
     return 0;
 }
 
@@ -38,11 +40,19 @@ void print(void)
     {
         if(i<progress_print)
         {
-            printf("-");
+            printf("=");
         }
         else{
             printf(" ");
         }
     }
     printf("] %d%%\n",progress);
+}
+void clear_screen(void)
+{
+    #ifdef _Win32
+        system("cls");
+    #else
+        system("clear");    
+    #endif
 }
