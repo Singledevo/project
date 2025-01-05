@@ -18,25 +18,36 @@ int main()
     unsigned int incomplete_task=1;
     srand(time(NULL));
     Task t1[6];
-    while(incomplete_task)
-    {
+
     for (int i = 0; i < 6; i++)
     {
         t1[i].id= i+1;
+        t1[i].progress=0;
         t1[i].step=rand() %5 +1;
+    }
+    
+    while(incomplete_task)
+    {
+        clear_screen();
+    for (int i = 0; i < 6; i++)
+    {
+        incomplete_task=0;
+        t1[i].progress+=t1[i].step;
+        
         if (t1[i].progress < 100)
         {
-            t1[i].progress+=t1[i].step;
+            incomplete_task=1;
         }
         else if (t1[i].progress >= 100)
         {   
-            incomplete_task=0;
             t1[i].progress=100;
         }  
-        print_UI(t1[i]);
-        sleep(1);
-        // clear_screen();
+        print_UI(t1[i]); 
+        
     } 
+      
+    sleep(1); 
+   
     }
     
    printf("All process are completed");
