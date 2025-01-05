@@ -15,7 +15,7 @@ void clear_screen(void);
 void print_UI(Task t1);
 int main()
 {
-    unsigned int incomplete_task=1;
+    
     srand(time(NULL));
     Task t1[6];
 
@@ -25,13 +25,14 @@ int main()
         t1[i].progress=0;
         t1[i].step=rand() %5 +1;
     }
-    
+    int incomplete_task=1;
     while(incomplete_task)
     {
+        incomplete_task=0;
         clear_screen();
     for (int i = 0; i < 6; i++)
     {
-        incomplete_task=0;
+        
         t1[i].progress+=t1[i].step;
         
         if (t1[i].progress < 100)
